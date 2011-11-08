@@ -39,9 +39,7 @@ i.e.:
 
 
 == FAQ ==
-Q: Why does thieme2pdf default to a page offset of 1?
-A: The first page of the ebook (cover) is not available as pdf download.
-   To save you the hastle thieme2pdf defaults to a page offset of 1.
+none so far ;)
 
 
 == Todo ==
