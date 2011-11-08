@@ -1,0 +1,49 @@
+thieme2pdf is a download script written in python (http://www.python.org/) to download ebooks from the thieme ebook library.
+I have written this software for personal use which is why the code is far from perfect. Patches are welcome.
+
+
+== Licencse ==
+GPL v3 (http://www.gnu.org/licenses/gpl.txt)
+
+
+== Usage ==
+python thieme2pdf.py --isbn=ISBN
+python thieme2pdf.py --isbn=ISBN --offset=5      //begin downloading with a 5 page offset
+python thieme2pdf.py --isbn=ISBN --out=FILENAME  //define a output filename. Default is ISBN.pdf
+
+i.e.:
+	python thieme2pdf.py --isbn=9783131471413
+	INFO: ISBN: 9783131471413 offset: 1 out: 9783131471413.pdf
+	INFO: downloading pages 2 - 12
+	INFO: downloading pages 13 - 23
+	...
+	INFO: did not succeed. reducing stepsize
+	INFO: convert pdf to ps
+	INFO: processing page set 1 of 7
+	...
+	INFO: and now back to pdf again
+	INFO: processing page set 1 of 7
+	...
+	INFO: merging
+	INFO: generating TOC
+	INFO: successfully written TOC
+	INFO: written pdf to 9783131471413.pdf
+
+
+== Prerequisites ==
+ - Python           tested with python 2.5, 2.6
+ - XPDF - pdftops   (http://foolabs.com/xpdf/download.html)
+ - pdftk            (http://www.pdflabs.com/docs/install-pdftk/)
+ - ps2pdf           (http://pages.cs.wisc.edu/~ghost/doc/AFPL/6.50/Ps2pdf.htm)
+ - jpdfbookmarks    (http://flavianopetrocchi.blogspot.com/)
+
+
+== FAQ ==
+Q: Why does thieme2pdf default to a page offset of 1?
+A: The first page of the ebook (cover) is not available as pdf download.
+   To save you the hastle thieme2pdf defaults to a page offset of 1.
+
+
+== Todo ==
+ - code cleanup
+ - more intelligent algorithm to detect the end of an ebook
