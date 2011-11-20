@@ -45,3 +45,4 @@ none so far ;)
 == Todo ==
  - code cleanup
  - more intelligent algorithm to detect the end of an ebook
+ - reduce dependencies
